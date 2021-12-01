@@ -10,7 +10,7 @@ import { Doctor } from 'src/app/Doctor';
 
 export class DashboardComponent implements OnInit {
   doctors:Doctor[] = []
-  strin:{} = {}
+  strin:string = ''
 
   constructor(private fetchService: FetchService) {}
 
@@ -19,6 +19,6 @@ export class DashboardComponent implements OnInit {
   }
 
   viewDoc(doctor:Doctor){
-    this.strin = doctor
+    this.strin = doctor.name
   }
 }

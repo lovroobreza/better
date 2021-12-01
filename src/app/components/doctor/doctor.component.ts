@@ -7,18 +7,16 @@ import { Doctor } from 'src/app/Doctor';
   styleUrls: ['./doctor.component.scss']
 })
 export class DoctorComponent implements OnInit {
-
   @Input() doctor!: Doctor
+  @Output() onDocClick: EventEmitter<Doctor> = new EventEmitter() 
 
-  @Output() onDocClick: EventEmitter<Doctor> = new EventEmitter()
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }
 
   onDetails(doctor:Doctor){
-    this.onDocClick.emit(doctor)
-  }
+  this.onDocClick.emit(doctor)   
+}
 
 }
