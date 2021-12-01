@@ -1,9 +1,9 @@
 <div class="container">
-  <h1>Current tasks</h1>
   <p
     [ngClass]="{ completed: task.completed === true }"
     (dblclick)="toggleCompleted(task)"
   >
-    {{ task.title }}
+    📝: {{ task.title }}
   </p>
+  <hr />
 </div>

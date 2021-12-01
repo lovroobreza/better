@@ -9,6 +9,7 @@ import { Doctor } from 'src/app/Doctor';
 export class DoctorComponent implements OnInit {
   @Input() doctor!: Doctor
   @Output() onDocClick: EventEmitter<Doctor> = new EventEmitter() 
+  @Output() changeUi: EventEmitter<Doctor> = new EventEmitter() 
 
   constructor() {}
 
@@ -16,7 +17,7 @@ export class DoctorComponent implements OnInit {
   }
 
   onDetails(doctor:Doctor){
-  this.onDocClick.emit(doctor)   
-}
+    this.onDocClick.emit(doctor)
+  }
 
 }
