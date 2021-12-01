@@ -1,0 +1,12 @@
+.container {
+  max-width: 90%;
+  margin: 5rem auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+app-doctor {
+  height: 400px;
+  background: gray;
+}

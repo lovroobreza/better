@@ -1,0 +1,9 @@
+<div class="container">
+  <app-doctor
+    *ngFor="let doctor of doctors"
+    [doctor]="doctor"
+    (onDocClick)="viewDoc(doctor)"
+  ></app-doctor>
+</div>
+
+{{ strin }}
