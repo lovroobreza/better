@@ -1,8 +1,16 @@
 <div class="container">
-  <app-doctor
-    *ngFor="let doctor of doctors"
-    [doctor]="doctor"
-    (onDocClick)="viewDoc(doctor)"
-  ></app-doctor>
-  {{ strin }}
+  <aside class="doctors">
+    <app-doctor
+      *ngFor="let doctor of doctors"
+      [doctor]="doctor"
+      (onDocClick)="viewDoc(doctor)"
+    ></app-doctor>
+  </aside>
+  <div class="details">
+    <app-doc-tasks
+      *ngFor="let task of tasks"
+      [doctors]="doctors"
+      [task]="task"
+    ></app-doc-tasks>
+  </div>
 </div>

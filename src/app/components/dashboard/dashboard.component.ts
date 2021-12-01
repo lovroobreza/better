@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchService } from 'src/app/services/fetch.service';
 import { Doctor } from 'src/app/Doctor';
+import { Task } from 'src/app/Task';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,8 +10,8 @@ import { Doctor } from 'src/app/Doctor';
 })
 
 export class DashboardComponent implements OnInit {
-  doctors:Doctor[] = []
-  strin:string = ''
+  doctors:Doctor[] = [];
+  tasks:Task[] = []
 
   constructor(private fetchService: FetchService) {}
 
@@ -18,7 +19,7 @@ export class DashboardComponent implements OnInit {
     this.fetchService.getDoctors().subscribe((doctor)=> this.doctors = doctor)
   }
 
-  viewDoc(doctor:Doctor){
-    this.strin = doctor.name
+  viewDoc(doctor: Doctor){
+    this.fetchService.showTasks(doctor).subscribe(task=> this.tasks = task)
   }
 }

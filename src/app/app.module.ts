@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DoctorComponent } from './components/doctor/doctor.component';
 import { HeaderComponent } from './components/header/header.component';
+import { DocTasksComponent } from './components/doc-tasks/doc-tasks.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { HeaderComponent } from './components/header/header.component';
     DashboardComponent,
     DoctorComponent,
     HeaderComponent,
+    DocTasksComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,51 @@
+.card {
+  padding: 1rem;
+
+  h1.doc-name {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: purple;
+    font-size: 1.35rem;
+  }
+
+  p.doc-address {
+    padding: 0.5rem 0;
+    font-size: 1.05rem;
+    height: 55px;
+  }
+
+  .contact {
+    font-size: 1.25rem;
+    padding: 0.2rem 0;
+
+    .con-sp {
+      color: purple;
+    }
+
+    p.doc-email {
+      font-size: 1.05rem;
+      font-weight: bold;
+    }
+
+    small.doc-phone {
+      font-size: 1.25rem;
+    }
+  }
+
+  .button {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 0.5rem 0;
+
+    button {
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      transition: 0.3s;
+      &:hover {
+        background: purple;
+        color: white;
+      }
+    }
+  }
+}

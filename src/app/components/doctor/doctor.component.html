@@ -1,3 +1,18 @@
-<h1>{{ doctor.name }}</h1>
-<h1>{{ doctor.id }}</h1>
-<button (click)="onDetails(doctor)">click to see details</button>
+<div class="card">
+  <h1 class="doc-name">{{ doctor.name }}</h1>
+  <hr />
+  <p class="doc-address">
+    From: {{ doctor.address.street }}, {{ doctor.address.city }}
+  </p>
+  <hr />
+  <div class="contact">
+    <span class="con-sp">Contact:</span>
+    <p class="doc-email">{{ doctor.email }}</p>
+
+    <small class="doc-phone">{{ doctor.phone }}</small>
+  </div>
+  <hr />
+  <div class="button">
+    <button (click)="onDetails(doctor)">Click to see more</button>
+  </div>
+</div>
