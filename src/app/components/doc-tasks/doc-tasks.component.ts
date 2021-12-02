@@ -11,8 +11,6 @@ export class DocTasksComponent implements OnInit {
   @Input() task!: Task
   @Input() doctors!: Doctor[]
 
-  doctor!:Doctor 
-
   constructor() { }
   
   ngOnInit(): void {
