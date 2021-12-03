@@ -6,12 +6,12 @@ import { Task } from '../Task';
 
 @Injectable({
   providedIn: 'root'
-})
+}) 
+
 export class FetchService {
+  private apiUrl = 'https://jsonplaceholder.typicode.com/users'
 
   constructor(private http:HttpClient) { }
-
-  private apiUrl = 'https://jsonplaceholder.typicode.com/users'
 
   getDoctors(): Observable<Doctor[]> {
     return this.http.get<Doctor[]>(this.apiUrl) 

@@ -5,7 +5,7 @@ import { Task } from 'src/app/Task';
 @Component({
   selector: 'app-doc-tasks',
   templateUrl: './doc-tasks.component.html',
-  styleUrls: ['./doc-tasks.component.scss']
+  styleUrls: ['./doc-tasks.component.scss'],
 })
 export class DocTasksComponent implements OnInit {
   @Input() task!: Task

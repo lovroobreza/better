@@ -4,10 +4,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DoctorComponent } from './components/doctor/doctor.component';
 import { HeaderComponent } from './components/header/header.component';
 import { DocTasksComponent } from './components/doc-tasks/doc-tasks.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { FetchService } from './services/fetch.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { DocTasksComponent } from './components/doc-tasks/doc-tasks.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [FetchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

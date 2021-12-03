@@ -7,7 +7,7 @@ import { Doctor } from 'src/app/Doctor';
   styleUrls: ['./doctor.component.scss']
 })
 export class DoctorComponent implements OnInit {
-  @Input() doctor!: Doctor
+  @Input() doctor!:Doctor
   @Output() onDocClick: EventEmitter<Doctor> = new EventEmitter() 
   @Output() changeUi: EventEmitter<Doctor> = new EventEmitter() 
 

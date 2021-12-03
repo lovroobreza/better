@@ -1,12 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router'; 
 
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { DoctorComponent } from './components/doctor/doctor.component';
 
-const routes: Routes = [/* 
-  {path: '', component: DashboardComponent},
-  {path:'doctor', component: DoctorComponent } */
+const routes: Routes = [
 ];
 
 @NgModule({
