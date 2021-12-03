@@ -1,8 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Doctor } from '../Doctor';
 import { Task } from '../Task';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-type': 'application/json'
+  })
+}
 
 @Injectable({
   providedIn: 'root'

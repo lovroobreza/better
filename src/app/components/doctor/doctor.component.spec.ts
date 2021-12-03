@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { DoctorComponent } from './doctor.component';
 
 describe('DoctorComponent', () => {
@@ -8,7 +8,8 @@ describe('DoctorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DoctorComponent ]
+      declarations: [ DoctorComponent ],
+      imports:[HttpClientTestingModule]
     })
     .compileComponents();
   });
@@ -19,7 +20,7 @@ describe('DoctorComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create', async() => {
+    await expect(component).toBeTruthy();
   });
 });

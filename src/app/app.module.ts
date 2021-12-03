@@ -8,7 +8,6 @@ import { DoctorComponent } from './components/doctor/doctor.component';
 import { HeaderComponent } from './components/header/header.component';
 import { DocTasksComponent } from './components/doc-tasks/doc-tasks.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { FetchService } from './services/fetch.service';
 
 @NgModule({
   declarations: [
@@ -21,9 +20,9 @@ import { FetchService } from './services/fetch.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [FetchService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

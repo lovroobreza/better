@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FetchService } from 'src/app/services/fetch.service';
 import { Doctor } from 'src/app/Doctor';
 import { Task } from 'src/app/Task';
+import { FetchService } from 'src/app/services/fetch.service';
 
 @Component({
   selector: 'app-dashboard',

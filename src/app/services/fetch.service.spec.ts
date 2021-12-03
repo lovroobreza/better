@@ -1,14 +1,9 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { FetchService } from './fetch.service';
 import { Doctor } from '../Doctor';
-import {asyncData, asyncError} from '../../../testing'
 
 describe('FetchService', () => {
-  let service: FetchService;
-  let httpClientSpy: jasmine.SpyObj<HttpClient>;
-
-  beforeEach(() => {
+  /* beforeEach(() => {
     TestBed.configureTestingModule({});
     service = TestBed.inject(FetchService);
   });
@@ -16,30 +11,30 @@ describe('FetchService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+ */
 
-  beforeEach(() => {
-    // TODO: spy on other methods too
-    httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
-    service = new FetchService(httpClientSpy);
+  const expectedDoctors: Doctor[] = [];
+  const okResponse = new Response(JSON.stringify(expectedDoctors), {
+    status: 200,
+    statusText: 'OK',
   });
 
- 
- /*  it('should return expected doctors (HttpClient called once)', (done: DoneFn) => {
-    const expectedDoctors: Doctor[] = [];
+ it('returns doctors', () => {
+    
+/*   //ARRANGE
+    const fetchSpy = jasmine.createSpy('fetch').and.returnValue(okResponse)
+    const service = new FetchService(fetchSpy)
   
-    httpClientSpy.get.and.returnValue(asyncData(expectedDoctors));
-  
-    service.getDoctors().subscribe(
-      doctors => {
-        expect(doctors).toEqual(expectedDoctors, 'expected heroes');
-        done();
-      },
-      done.fail
+    //ACT
+  service.getDoctors().subscribe(
+    doctors => {
+      expect(doctors).toEqual(expectedDoctors, 'expected heroes');
+    },
     );
-    expect(httpClientSpy.get.calls.count()).toBe(1, 'one call');
+     */
   });
 
-  it('should return an error when the server returns a 404', (done: DoneFn) => {
+  /* it('should return an error when the server returns a 404', (done: DoneFn) => {
     const errorResponse = new HttpErrorResponse({
       error: 'test 404 error',
       status: 404, statusText: 'Not Found'

@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { DocTasksComponent } from './doc-tasks.component';
 
 describe('DocTasksComponent', () => {
@@ -8,7 +8,8 @@ describe('DocTasksComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DocTasksComponent ]
+      declarations: [ DocTasksComponent ],
+      imports:[HttpClientTestingModule]
     })
     .compileComponents();
   });
