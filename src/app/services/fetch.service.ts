@@ -4,27 +4,19 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Doctor } from '../Doctor';
 import { Task } from '../Task';
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-type': 'application/json'
-  })
-}
-
-@Injectable({
-  providedIn: 'root'
-}) 
-
+@Injectable()
 export class FetchService {
   private apiUrl = 'https://jsonplaceholder.typicode.com/users'
 
   constructor(private http:HttpClient) { }
 
-  getDoctors(): Observable<Doctor[]> {
+  getDoctors() {
     return this.http.get<Doctor[]>(this.apiUrl) 
   }
 
+/* 
   showTasks(doctor: Doctor): Observable<Task[]>{
     const url = `${this.apiUrl}/${doctor.id}/todos` 
-    return this.http.get<Task[]>(url)
-  }
+    return this.HttpClient.get<Task[]>(url)
+  } */
 }
