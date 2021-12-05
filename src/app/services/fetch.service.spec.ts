@@ -1,55 +1,45 @@
-import { TestBed } from '@angular/core/testing';
-import { FetchService } from './fetch.service';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+
+import { inject, TestBed } from '@angular/core/testing';
 import { Doctor } from '../Doctor';
+import { FetchService } from './fetch.service';
 
-describe('FetchService', () => {
-  /* beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(FetchService);
-  });
+fdescribe('Fetch Service', () => {
+  let fetchService: FetchService
+  let controller: HttpTestingController
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
- */
+  beforeEach(()=>{
+    TestBed.configureTestingModule({
+      imports:[HttpClientTestingModule],
+      providers:[FetchService]
+    })
+    fetchService = TestBed.inject(FetchService);
+    controller = TestBed.inject(HttpTestingController);
+  })
 
-  const expectedDoctors: Doctor[] = [];
-  const okResponse = new Response(JSON.stringify(expectedDoctors), {
-    status: 200,
-    statusText: 'OK',
-  });
 
- it('returns doctors', () => {
-    
-/*   //ARRANGE
-    const fetchSpy = jasmine.createSpy('fetch').and.returnValue(okResponse)
-    const service = new FetchService(fetchSpy)
+  it('returns data from api', ()=>{
+  const expectedDoctors: Doctor[] = [{ id: 1, name:'fake', username:'string', email:'string', address: { street:'string', city:'string'}, phone: 'string', website: 'string',company: { }},
+     { id: 1, name:'fake', username:'string', email:'string', address: { street:'string', city:'string'}, phone: 'string', website: 'string',company: { }},
+  ];
+  const expectedUrl = 'https://jsonplaceholder.typicode.com/users'
+
+  let actualDocs: Doctor[] | undefined;
+  fetchService.getDoctors().subscribe(doctors=>{
+    expect(doctors.length).toBe(2)
+    actualDocs = doctors 
+  })  
+
+  const request = controller.expectOne(expectedUrl)
+  request.flush(expectedDoctors)
+  controller.verify();
+
+  expect(actualDocs).toEqual(expectedDoctors)
+
+  })
+
   
-    //ACT
-  service.getDoctors().subscribe(
-    doctors => {
-      expect(doctors).toEqual(expectedDoctors, 'expected heroes');
-    },
-    );
-     */
-  });
-
-  /* it('should return an error when the server returns a 404', (done: DoneFn) => {
-    const errorResponse = new HttpErrorResponse({
-      error: 'test 404 error',
-      status: 404, statusText: 'Not Found'
-    });
-  
-    httpClientSpy.get.and.returnValue(asyncError(errorResponse));
-  
-    service.getDoctors().subscribe(
-      doctors => done.fail('expected an error, not heroes'),
-      error  => {
-        expect(error.message).toContain('test 404 error');
-        done();
-      }
-    );
-    
-  }) */
-  
+  it('be created', inject([FetchService], (service: FetchService) =>{
+    expect(service).toBeTruthy()
+  }))
 });
